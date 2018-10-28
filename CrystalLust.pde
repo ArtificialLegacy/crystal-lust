@@ -41,6 +41,26 @@ void draw() {
     pos.x = npos.x;
     pos.y = npos.y;
   }
+  if(rx == wsx-1) {
+    screenx++;
+    pos.x = 1*16;
+    loadLevel("data/img/lvl/"+screenx+"-"+screeny+".png");
+  }
+  if(rx == 0) {
+    screenx--;
+    pos.x = (wsx-2)*16;
+    loadLevel("data/img/lvl/"+screenx+"-"+screeny+".png");
+  }
+  if(ry == wsy-1) {
+    screenx++;
+    ry = 1;
+    loadLevel("data/img/lvl/"+screenx+"-"+screeny+".png");
+  }
+  if(ry == 0) {
+    screenx++;
+    rx = 1;
+    loadLevel("data/img/lvl/"+screenx+"-"+screeny+".png");
+  }
 }
 void keyPressed() {
   if(key == 'w') {
