@@ -1,0 +1,22 @@
+wall - (100, 100, 100);
+floor - (50, 50, 50);
+crate - (140, 98, 60),
+final door - (210, 226, 99),
+locked door (h) - (125, 226, 99),
+locked door (v) - (125, 226, 100);
+chest - (127, 82, 22),
+stick chest - (127, 82, 21);
+sword chest - (127, 82, 20);
+boomarang chest - (127, 82, 19);
+bow chest - (127, 82, 18);
+claw chest - (127, 82, 23);
+hook chest - (127, 82, 24),
+glider chest - (127, 82, 25);
+magnetic boot chest - (127, 82, 26);
+key - (79, 79, 79),
+enemy - (109, 16, 16)
+altar - (255, 255, 255);
+pot - (75, 75, 75);
+mud - (140, 98, 100);
+air - (0, 0, 0);
+boulder - (120, 120, 120);
