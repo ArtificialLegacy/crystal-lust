@@ -7,11 +7,13 @@ int walkspeed = 2;
 PVector chmove;
 int screenx = 0;
 int screeny = 0;
+ArrayList<Entity> entities;
 
 void settings() {
   size(512, 512);
 }
 void setup() {
+  entities = new ArrayList<Entity>();
   wsx = width/16;
   wsy = height/16;
   world = new int[wsx][wsy];
@@ -35,6 +37,9 @@ void draw() {
         image(tiles[3], i*16, j*16); 
       }
     }
+  }
+  for(Entity e: entities) {
+    e.update();
   }
   fill(255);
   rect(pos.x, pos.y, 16, 16);
@@ -111,6 +116,10 @@ void loadLevel(String path) {
         }
         if(c == color(0, 0, 0)) {
           type = 2;
+        }
+        if(c == color(109, 16, 16)) {
+          type = 0;
+          entities.add(new Entity(i*16, j*16, loadImage("data/img/ent/warrior.png")).addBehavior("homing"));
         }
         world[i][j] = type;
       }
