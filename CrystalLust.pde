@@ -103,6 +103,7 @@ void keyReleased() {
 }
 void loadLevel(String path) {
   PPImage lvl = loadImage(path);
+  entities = new ArrayList<Entity>();
   try {
     for(int i = 0; i < wsx; i++) {
       for(int j = 0; j < wsy; j++) {
