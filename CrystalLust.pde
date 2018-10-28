@@ -18,16 +18,22 @@ void setup() {
   loadLevel("data/img/lvl/"+screenx+"+"+screeny+".png");
   pos = new PVector(width/2, height/2);
   chmove = new PVector(0, 0);
-  tiles = new PImage[3];
+  tiles = new PImage[4];
   tiles[0] = loadImage("data/img/tile/floor.png");
   tiles[1] = loadImage("data/img/tile/wall.png");
   tiles[2] = null; //Air tile
+  tiles[3] = loadImage("data/img/tile/missing.png");
 }
 void draw() {
   background(0);
   for(int i = 0; i < wsx; i++) {
     for(int j = 0; j < wsy; j++) {
-      if(world[i][j] != 2 && world[i][j] < tiles.length) { image(tiles[world[i][j]], i*16, j*16); };
+      if(world[i][j] != 2 && world[i][j] < tiles.length) { 
+        image(tiles[world[i][j]], i*16, j*16); 
+      }
+      if(world[i][j] > tiles.length) {
+        image(tiles[3], i*16, j*16); 
+      }
     }
   }
   fill(255);
