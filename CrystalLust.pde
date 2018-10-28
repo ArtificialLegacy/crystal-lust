@@ -20,11 +20,18 @@ void setup() {
   loadLevel("data/img/lvl/"+screenx+"-"+screeny+".png");
   pos = new PVector(width/2, height/2);
   chmove = new PVector(0, 0);
-  tiles = new PImage[4];
+  tiles = new PImage[11];
   tiles[0] = loadImage("data/img/tile/floor.png");
   tiles[1] = loadImage("data/img/tile/wall.png");
   tiles[2] = null; //Air tile
   tiles[3] = loadImage("data/img/tile/missing.png");
+  tiles[4] = loadImage("data/img/tile/chest.png");
+  tiles[5] = loadImage("data/img/tile/chest.png");
+  tiles[6] = loadImage("data/img/tile/chest.png");
+  tiles[7] = loadImage("data/img/tile/chest.png");
+  tiles[8] = loadImage("data/img/tile/chest.png");
+  tiles[9] = loadImage("data/img/tile/chest.png");
+  tiles[10] = loadImage("data/img/tile/chest.png");
 }
 void draw() {
   background(0);
@@ -117,6 +124,27 @@ void loadLevel(String path) {
         }
         if(c == color(0, 0, 0)) {
           type = 2;
+        }
+        if(c == color(127, 82, 19)) {
+          type = 4;
+        }
+        if(c == color(127, 82, 20)) {
+          type = 5;
+        }
+        if(c == color(127, 82, 21)) {
+          type = 6;
+        }
+        if(c == color(127, 82, 22)) {
+          type = 7;
+        }
+        if(c == color(127, 82, 23)) {
+          type = 8;
+        }
+        if(c == color(127, 82, 24)) {
+          type = 9;
+        }
+        if(c == color(127, 82, 25)) {
+          type = 10;
         }
         if(c == color(109, 16, 16)) {
           type = 0;
