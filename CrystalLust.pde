@@ -76,13 +76,12 @@ void loadLevel(String path) {
     for(int j = 0; j < wsy; j++) {
       color c = lvl.get(i, j);
       int type = 2000;
-      if(c == color(255, 128, 0)) {
+      if(c == color(50, 50, 50)) {
         type = 0;
       }
-      if(c == color(128, 64, 0)) {
+      if(c == color(100, 100, 100)) {
         type = 1;
-      }
-      if(c == color(0, 0, 0)) {
+      } else {
         type = 2;
       }
       world[i][j] = type;
