@@ -58,13 +58,13 @@ void draw() {
     loadLevel("data/img/lvl/"+screenx+"-"+screeny+".png");
   }
   if(ry == wsy-1) {
-    screenx++;
-    ry = 1;
+    screeny++;
+    pos.y = 1*16;
     loadLevel("data/img/lvl/"+screenx+"-"+screeny+".png");
   }
   if(ry == 0) {
-    screenx++;
-    rx = 1;
+    screeny--;
+    pos.y = (wsy-2)*16;
     loadLevel("data/img/lvl/"+screenx+"-"+screeny+".png");
   }
 }
