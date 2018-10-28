@@ -91,20 +91,27 @@ void keyReleased() {
   }
 }
 void loadLevel(String path) {
-  PImage lvl = loadImage(path);
-  for(int i = 0; i < wsx; i++) {
-    for(int j = 0; j < wsy; j++) {
-      color c = lvl.get(i, j);
-      int type = 2000;
-      if(c == color(50, 50, 50)) {
-        type = 0;
+  PPImage lvl = loadImage(path);
+  try {
+    for(int i = 0; i < wsx; i++) {
+      for(int j = 0; j < wsy; j++) {
+        color c = lvl.get(i, j);
+        int type = 2000;
+        if(c == color(100, 100, 100)) {
+          type = 1;
+        }
+        if(c == color(50, 50, 50)) {
+          type = 0;
+        }
+        if(c == color(0, 0, 0)) {
+          type = 2;
+        }
+        world[i][j] = type;
       }
-      if(c == color(100, 100, 100)) {
-        type = 1;
-      } else {
-        type = 2;
-      }
-      world[i][j] = type;
     }
+  } catch(Exception e) {
+    loadLevel("data/img/lvl/null.png");
+    pos.x = width/2;
+    pos.y = height/2;
   }
 }
