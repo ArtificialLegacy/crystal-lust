@@ -15,7 +15,7 @@ void setup() {
   wsx = width/16;
   wsy = height/16;
   world = new int[wsx][wsy];
-  loadLevel("data/img/lvl/"+screenx+"+"+screeny+".png");
+  loadLevel("data/img/lvl/"+screenx+"-"+screeny+".png");
   pos = new PVector(width/2, height/2);
   chmove = new PVector(0, 0);
   tiles = new PImage[4];
