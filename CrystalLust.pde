@@ -9,7 +9,7 @@ int screenx = 0;
 int screeny = 0;
 
 void settings() {
-  size(800, 800);
+  size(512, 512);
 }
 void setup() {
   wsx = width/16;
