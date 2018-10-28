@@ -17,8 +17,8 @@ class Entity {
       pushMatrix();
       translate(img.width, 0);
       scale(-1, 1);
-      translate(epos.x, epos.y);
-      image(img, 0, 0);
+      //translate(epos.x, epos.y);
+      image(img, -epos.x, epos.y);
       popMatrix();
     }
     PVector npos = new PVector(epos.x, epos.y);
@@ -26,7 +26,7 @@ class Entity {
       if(b.equals("homing")) {
         PVector tele = new PVector(epos.x-pos.x, epos.y-pos.y);
         tele.normalize();
-        tele.mult(2);
+        tele.mult(-2);
         if(tele.x < 0) {
           flip = true;
         } else {
@@ -36,7 +36,7 @@ class Entity {
         npos.y += tele.y;
       }
     }
-    if(world[round(npos.x)][round(npos.y)] == 0) {
+    if(world[round(npos.x/16)][round(npos.y/16)] == 0) {
       epos.x = npos.x;
       epos.y = npos.y;
     }
